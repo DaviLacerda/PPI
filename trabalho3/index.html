@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Programação para Internet - 2024/1</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body class="bg-gray-100 font-sans">
+        <div class="container mx-auto px-4 py-8">
+            <header class="text-center mb-8">
+                <h1 class="text-3xl font-bold text-blue-600 mb-2">
+                    Programação para Internet - 2024/1
+                </h1>
+                <p class="text-xl text-gray-700">
+                    Bacharelado em Ciência da Computação
+                </p>
+            </header>
+
+            <section class="bg-white shadow-md rounded-lg p-6 mb-8">
+                <h2 class="text-2xl font-semibold mb-4">
+                    Informações do Curso
+                </h2>
+                <ul class="space-y-2">
+                    <li><strong>Professor:</strong> Daniel Furtado</li>
+                    <li><strong>Aluno:</strong> Davi Tobias Lacerda</li>
+                    <li><strong>Número de Matrícula:</strong> 12011BCC019</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2 class="text-2xl font-semibold mb-4">Projetos</h2>
+                <div
+                    id="projectGrid"
+                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+                >
+                    <!-- Os projetos serão inseridos dinamicamente aqui -->
+                </div>
+            </section>
+        </div>
+
+        <script>
+            const baseUrl = "http://ppi.infinityfreeapp.com/"; // Substitua pela sua URL base real
+            const projetos = [
+                {
+                    nome: "trabalho3/ex1",
+                    tecnologias: ["HTML, CSS"],
+                    dataEntrega: "21/08/2024",
+                },
+                {
+                    nome: "trabalho3/ex2",
+                    tecnologias: ["HTML, CSS"],
+                    dataEntrega: "21/08/2024",
+                },
+                // Adicione mais projetos conforme necessário
+            ];
+
+            const projectGrid = document.getElementById("projectGrid");
+
+            projetos.forEach((projeto) => {
+                const projetoCard = document.createElement("div");
+                projetoCard.className = "bg-white shadow-md rounded-lg p-4";
+                projetoCard.innerHTML = `
+                <h3 class="text-lg font-semibold mb-2">${projeto.nome}</h3>
+                <p><strong>Tecnologias:</strong> ${projeto.tecnologias.join(
+                    ", "
+                )}</p>
+                <p><strong>Data de Entrega:</strong> ${projeto.dataEntrega}</p>
+                <a href="${baseUrl}${
+                    projeto.nome
+                }" class="text-blue-500 hover:underline mt-2 inline-block">Ver Projeto</a>
+            `;
+                projectGrid.appendChild(projetoCard);
+            });
+        </script>
+    </body>
+</html>
