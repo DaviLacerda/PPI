@@ -1,0 +1,59 @@
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f0f0;
+}
+
+img {
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+input:invalid + span::after {
+    content: "X";
+    color: red;
+}
+
+input:valid + span::after {
+    content: "✓";
+    color: green;
+}
+
+#nome:focus {
+    outline-color: blue;
+}
+
+legend {
+    font-weight: bold;
+}
+
+fieldset label {
+    font-style: italic;
+}
+
+legend + label {
+    text-decoration: underline;
+}
+
+a, a:hover {
+    color: black;
+}
+
+fieldset:has(input[type="file"]) {
+    background-color: pink;
+}
+
+:is(fieldset) :is(label) {
+    font-weight: lighter;
+}
+
+form:first-child {
+    color: blueviolet;
+}
+
+label:first-of-type {
+    color: blue;
+}
