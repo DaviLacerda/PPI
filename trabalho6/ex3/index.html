@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcula peso</title>
+</head>
+
+<body>
+    <input type="number" name="altura" min="50" max="300" placeholder="Preencha sua altura (em cm)">
+    <label>Sexo</label>
+    <input type="radio" id="masculino" name="sexo" value="masculino">
+    <label for="masculino">Masculino</label>
+    <input type="radio" id="feminino" name="sexo" value="feminino">
+    <label for="feminino">Feminino</label><br>
+    <button type="button">Calcular resultado</button>
+    <p></p>
+
+    <img src="devtools.png" alt="Exemplo de uso do Devtools">
+
+    <script>
+        const button = document.querySelector('button');
+
+        button.onclick = () => {
+            const altura = document.querySelector('input[name="altura"]');
+            const sexo = document.querySelector('input[name="sexo"]:checked');
+            get_formula(altura, sexo);
+        };
+
+        const get_formula = (altura, sexo) => {
+            let height = parseInt(altura.value);
+            const result = document.querySelector('p');
+
+            result.textContent = `Considerando a altura igual a ${height} e seu sexo ${sexo.value}, seu peso ideal é igual a ${sexo.value == "masculino" ? 52 + (0.75 * (height - 152.4)) : 52 + (0.67 * (height - 152.4))}`;
+        }
+    </script>
+</body>
+
+</html>

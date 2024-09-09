@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos</title>
+</head>
+<body>
+    <input type="text" name="nome">
+    <button type="button">Digite seu nome e clique aqui</button>
+    <p></p>
+
+    <img src="devtools.png" alt="Exemplo de uso do Devtools">
+
+    <script>
+        const button = document.querySelector("button")
+        button.onclick = () => {
+            const input = document.querySelector("input")
+            const result = document.querySelector("p")
+
+            result.textContent = `Obrigado, ${input.value}`
+        }
+    </script>
+</body>
+</html>
