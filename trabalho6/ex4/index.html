@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <h1>Explicação</h1>
+    <p>A saída produzida pelo código é igual a:</p>
+    <pre>
+        [object Text]
+        [object HTMLHeadingElement]
+        [object Text]
+        [object HTMLInputElement]
+        [object Text]
+        [object Comment]
+        [object Text]
+        [object HTMLPreElement]
+        [object Text]
+        [object HTMLScriptElement]
+        true
+        true
+        true
+        true
+        true
+        [object HTMLDocument]
+    </pre>
+    <p>A saída apresentada se deve ao fato de como a DOM Tree é construída. Os elementos <strong>h1</strong>, <strong>input</strong>, <strong>pre</strong> são nós que herdam propriedades anteriores de objetos <i>HTMLElement</i>, <i>Element</i>, <i>Node</i> e <i>EventTarget</i>, isto explica o resultado das linhas 11 até 15. Além disso, qualquer texto que não esteja dentro desses nós é representado por um nó do objeto Text, sendo na maioria das vezes espaços em branco/tabulações criadas para formatação do código pelo navegador (Devtools -> Fontes). Por fim, o elemento <strong>document</strong> é criado herdando propriedas de outros elementos anteriores, assim como mencionado acima - com exceção das propriedades de objetos <i>HTMLElement</i> e <i>Element</i>.</p>
+</body>
+
+</html>
