@@ -1,0 +1,39 @@
+.galeria {
+    background-color: white;
+    padding: 2rem;
+}
+
+.galeria h2 {
+    color: dimgray;
+}
+
+.galeria nav ul {
+    text-align: center;
+    padding: 0;
+    margin: 0.25rem;
+}
+
+.galeria nav li {
+    list-style-type: none;
+    display: inline;
+    margin-right: 1rem;
+}
+
+.galeria nav li a {
+    color: white;
+    text-decoration: none;
+}
+
+.galeria table td {
+    padding: 0.75rem 0.5rem;
+    width: 128px;
+    height: 128px;
+}
+
+.galeria table img {
+    object-fit: cover;
+    border-radius: 0.5rem;
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+}

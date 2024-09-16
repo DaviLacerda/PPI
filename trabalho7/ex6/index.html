@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zxx"> <!--zxx or pt-BR: Warning validator W3 -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Clínica ABC Health e informações detalhadas sobre sua missão, valores e endereços.">
+    <title>Clínica ABC Health</title>
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/galeria.css">
+    <link rel="stylesheet" href="styles/login.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+
+<body>
+    <header>
+        <h1>Clínica ABC Health</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><button>Home</button></li>
+            <li><button>Galeria</button></li>
+            <li><button>Login</button></li>
+        </ul>
+    </nav>
+    <div class="tabs">
+        <section class="index">
+            <h2>Bem vindo à Clínica ABC Health</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel culpa illum, odit eius illo corrupti
+                recusandae
+                facilis velit porro neque quis doloribus corporis tempore quo soluta quam excepturi? Nisi, placeat.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit tempora consectetur recusandae vel cumque
+                ea
+                deserunt nemo, veritatis, harum delectus quidem maiores voluptates assumenda quae atque libero
+                voluptatem
+                fuga consequuntur!</p>
+            <h2>Nossa Missão</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero ullam odit tenetur impedit architecto
+                perspiciatis earum culpa dolores voluptatibus magni accusamus iure molestias, labore et tempore.
+                Asperiores
+                quia quod iusto.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita quia ipsam, praesentium facere porro
+                libero
+                ipsa temporibus illo nostrum. Quisquam laborum eaque blanditiis facere doloremque corporis ut voluptas,
+                consequuntur quam.</p>
+            <h2>Nossos Valores</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet quas quasi voluptatem. Expedita nam
+                doloribus neque tenetur reprehenderit, itaque sunt. Sit tenetur error nobis minima non id eum aut dicta.
+            </p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos possimus exercitationem fugit earum
+                architecto
+                itaque nulla tempora ex, laborum blanditiis maiores ut quaerat soluta porro minus, dolore illum, ipsam
+                molestias.</p>
+        </section>
+        <section class="galeria">
+            <h2>Nossa Estrutura</h2>
+            <table>
+                <tr>
+                    <td><img src="images/clinica-01.png" alt="Recepção da Clínica ABC Health" width="192" height="192">
+                    </td>
+                    <td><img src="images/clinica-02.png" alt="Médica conversando com paciente" width="192" height="192">
+                    </td>
+                    <td><img src="images/clinica-03.png" alt="Consultório da Clínica ABC Health" width="192"
+                            height="192">
+                    </td>
+                    <td><img src="images/clinica-04.png" alt="Médico escrevendo uma prescrição" width="192"
+                            height="192">
+                    </td>
+                </tr>
+                <tr>
+                    <td><img src="images/clinica-05.png" alt="Consultório da Clínica ABC Health" width="192"
+                            height="192">
+                    </td>
+                    <td><img src="images/clinica-06.png" alt="Médico pensativo observando o horizonte" width="192"
+                            height="192"></td>
+                    <td><img src="images/clinica-07.png" alt="Médico sorridente olhando para a camêra" width="192"
+                            height="192"></td>
+                    <td><img src="images/clinica-08.png" alt="Médica sorridente olhando para a camêra" width="192"
+                            height="192"></td>
+                </tr>
+            </table>
+        </section>
+        <section class="login">
+            <form action="login.php" method="POST">
+                <label for="email">Usuário:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="password">Senha:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">
+                    <span class="material-icons">send</span>
+                    Entrar
+                </button>
+            </form>
+        </section>
+    </div>
+
+    <footer>
+        <address>Av. João Naves de Ávila, Santa Mônica, Uberlândia</address>
+    </footer>
+
+    <script>
+        window.onload = () => { // ao carregar a janela do navegador
+            buttons = document.querySelectorAll("nav button"); // seleciona todos os <button> dentro da <nav>
+            buttons.forEach(button => { // para cada <button>
+                button.addEventListener("click", handleTab); // executa a função handleTab ao clicar
+            });
+            openTab(0); // define a primeira tab como padrão
+        };
+
+        const handleTab = (e) => {
+            const activeButton = e.target; // pega o nó do botão ativo
+            const buttonListItem = activeButton.parentNode; // pega o elemento pai do nó
+            const nodes = Array.from(buttonListItem.parentNode.children); // pega todos os nós filhos do nó pai e armazena numa array
+            const index = nodes.indexOf(buttonListItem); // pega o índice
+            openTab(index); // executa a função openTab com o índice como parâmetro
+        };
+
+        const openTab = (index) => {
+            const activeTab = document.querySelector(".activeTab"); // pega o nó com a classe activeTab
+            if (activeTab !== null) { // se existir o nó
+                activeTab.classList.remove("activeTab"); // remove a classe activeTab
+            }
+
+            const activeButton = document.querySelector(".activeButton"); // pega o nó com a classe activeButton
+            if (activeButton !== null) { // se existir o nó
+                activeButton.classList.remove("activeButton"); // remove a classe activeButton
+            }
+
+            document.querySelectorAll(".tabs section")[index].classList.add("activeTab"); // pega a tab relativa ao índice e adiciona a classe activeTab
+            document.querySelectorAll("nav button")[index].classList.add("activeButton"); // pega o botão relativo ao índice e adiciona a classe activeButton
+        }
+    </script>
+</body>
+
+</html>

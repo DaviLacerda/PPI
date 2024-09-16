@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currículo de Fulano de Tal</title>
+    <link rel="stylesheet" href="globals.css">
+</head>
+
+<body>
+    <main>
+        <img src="images/user.png" alt="Fulano de Tal" width="120" height="120">
+        <h1>Fulano de Tal</h1>
+        <section>
+            <h2>Perfil</h2>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel sed
+                sint exercitationem cum molestiae maiores illum saepe, cumque ad!
+                Quidem.
+            </p>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit,
+                deserunt deleniti. Iure eaque libero maiores!
+            </p>
+        </section>
+        
+        <section>
+            <h2>Principais Competências</h2>
+            <ul>
+                <li>Lorem.</li>
+                <li>Lorem.</li>
+                <li>Lorem.</li>
+                <li>Lorem.</li>
+                <li>Lorem.</li>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>Formação Acadêmica</h2>
+            <p>
+                Graduação em Ciência da Computação pela
+                <a href="https://ufu.br/">Universidade Federal de Uberlândia</a>
+                (2018) e Mestrado em Ciência da Computação pela
+                <a href="https://www5.usp.br/">Universidade de São Paulo</a> (2020)
+            </p>
+        </section>
+        
+        <section>
+            <h2>Experiência Profissional</h2>
+            <ol>
+                <li>
+                    Empresa ABC (2015-2017)
+                    <ul>
+                        <li>Programação em C</li>
+                        <li>Programação em VB</li>
+                    </ul>
+                </li>
+                <li>
+                    Empresa XYZ (2018-2021)
+                    <ul>
+                        <li>Desenvolvimento Front-End</li>
+                        <li>Desenvolvimento Back-End</li>
+                        <li>Desenvolvimento Mobile</li>
+                    </ul>
+                </li>
+            </ol>
+            <a href="experiencia.html">Veja as experiências profissionais em detalhes</a>
+        </section>
+        
+        <section>
+            <h2>Contato</h2>
+            <!-- I think that is wrong/not valid for this class -->
+            <address>
+                <img src="images/map-point.png" alt="Ícone de localização" width="30" height="30">
+                João Naves de vila, Santa Mônica, Uberlândia
+            </address>
+            <img src="images/phone.png" alt="Ícone de telefone" width="30" height="30">
+            <a href="tel:+553499999999">(34) 99999-9999</a>
+            <img src="images/mail.png" alt="Ícone de email" width="30" height="30">
+            <a href="mailto:fulano@mail.com">fulano@mail.com</a>
+        </section>
+        
+    </main>
+
+    <script>
+        document.querySelectorAll("h2").forEach(h2 => {
+            h2.addEventListener("click", () => {
+                const nextElement = h2.nextElementSibling;
+                nextElement.style.display = "none";
+            });
+
+            h2.addEventListener("dblclick", () => {
+                const nextElement = h2.nextElementSibling;
+                nextElement.style.display = "block";
+            })
+        });
+    </script>
+</body>
+
+</html>

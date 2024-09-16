@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Interesse</title>
+    <style>
+        ol {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+
+            li {
+                background-color: lightblue;
+                border: 1px solid blue;
+                max-width: 256px;
+                border-radius: 4px;
+                padding: 4px 8px;
+
+                span {
+                    float: left;
+                }
+
+                button {
+                    float: right;
+                    border: none;
+                    background-color: transparent;
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <label for="interest">Interesse:</label>
+    <input type="text" name="interest" id="interest">
+    <ol></ol>
+
+    <script>
+        const interestInput = document.querySelector("input"); // pega o elemento <input>
+        interestInput.addEventListener("keyup", (e) => { // adiciona um evento quando uma tecla é solta pelo usuário
+            if (e.key === "Enter") { // se esse tecla for o enter, entra e faz as ações
+                const newItemList = document.createElement("li"); // cria um <li>
+                const newSpan = document.createElement("span"); // cria um <span>
+                const newButton = document.createElement("button"); // cria um <button>
+
+                newSpan.textContent = interestInput.value; // adiciona o valor que o usuário inseriu em <input>
+                newButton.textContent = "❌"; // adiciona um X no botão
+
+                newItemList.appendChild(newSpan); // adiciona o <span> no <li> com nó filho
+                newItemList.appendChild(newButton); // adiciona o <botão> no <li> com nó filho
+                const interestList = document.querySelector("ol"); // pega o elemento <ol>
+                interestList.appendChild(newItemList); // adiciona o novo <li> na <ol>
+
+                newButton.onclick = () => { // se o <button> for clicado, remove o <li> da lista
+                    newItemList.remove();
+                };
+
+                interestInput.value = ""; // coloca o valor do <input> como vazio (limpa o <input>)
+            }
+        })
+    </script>
+</body>
+
+</html>
