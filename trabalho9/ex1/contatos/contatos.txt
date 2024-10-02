@@ -1,0 +1,5 @@
+Fulano;fulano@mail.com;1234
+fulano;fulano@ufu.br;99999
+cicrano;cicrano@ufu.br;11111
+<script>alert('Ataq. X S S')</script> ;injection@ufu.br;666
+<script>window.location='http://www.ufu.br'</script> ;ufu@ufu.br;3434
